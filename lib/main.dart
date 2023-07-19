@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './calculator.dart' as calculator;
-//Adding this to try to push the project
+import 'package:combining_work_attempt_1/calculator.dart' as calculator;
 
 void main() {
   runApp(const MyApp());
@@ -44,8 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> buttonPressed(value) async {
     // calculator.handleInput(value);
-    if (calculations.contains(value)) {
+    if (calculations.contains(value) || buttons.contains(value)) {
       switch (value) {
+        case "+/-":
+          value = 'm';
+          break;
         case "÷":
           value = '/';
           break;
